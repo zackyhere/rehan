@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-// Data untuk langkah-langkah UKK agar kode lebih bersih
 const ukkSteps = [
   {
     id: 1,
@@ -67,8 +66,7 @@ const ukkSteps = [
 ];
 
 export default function Home() {
-  // Fungsi untuk menangani smooth scrolling saat navigasi diklik
-  const handleScroll = (e, targetId) => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
@@ -78,7 +76,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased">
-      {/* Navbar */}
       <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
@@ -104,7 +101,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <header className="bg-slate-900 py-24 text-white">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
@@ -117,7 +113,6 @@ export default function Home() {
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Section: Profil Sekolah */}
         <section id="profil" className="mb-32 scroll-mt-24">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div className="relative overflow-hidden rounded-2xl shadow-xl min-h-[350px]">
@@ -147,7 +142,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section: Profil TJKT */}
         <section id="jurusan" className="mb-32 scroll-mt-24 rounded-[2.5rem] bg-white p-8 shadow-sm border border-slate-100 md:p-16">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-block rounded-full bg-blue-50 px-4 py-1.5 text-sm font-semibold text-blue-600 mb-6">Fokus Keahlian</span>
@@ -158,7 +152,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section: UKK Details */}
         <section id="ukk" className="scroll-mt-24">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-slate-900">Alur Kerja Praktik UKK</h2>
@@ -189,7 +182,6 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="mt-24 border-t border-slate-200 bg-white py-12">
         <div className="mx-auto max-w-7xl px-4 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
           <p>© 2026 SMK PAWYATAN DAHA 2 • Jurusan TJKT</p>
