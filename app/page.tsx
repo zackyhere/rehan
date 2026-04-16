@@ -208,7 +208,7 @@ export default function Home() {
         {/* TENTANG UKK */}
         <article id="ukk" className="scroll-mt-[40px]">
           <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-3xl p-[30px] md:p-[50px]">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-[20px] text-center">Panduan Pelaksanaan UKK</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-[20px] text-center">UKK Praktikum TKJ</h2>
             
             <p className="text-slate-600 leading-relaxed text-sm md:text-base text-center max-w-3xl mx-auto mb-[40px]">
               Uji Kompetensi Keahlian (UKK) merupakan bentuk evaluasi akhir guna mengukur capaian keterampilan teknis siswa secara komprehensif. Melalui ujian ini, peserta didik diharapkan mampu mempraktikkan kompetensi yang telah dipelajari menggunakan standar dan prosedur operasional industri.
