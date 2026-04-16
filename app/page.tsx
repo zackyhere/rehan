@@ -2,364 +2,304 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <div className="bg-white text-[#111111] font-sans selection:bg-[#38B6FF] selection:text-white overflow-x-hidden">
+    <div className="min-h-screen relative text-slate-700 font-sans selection:bg-blue-300 selection:text-white overflow-x-hidden bg-[#eef2f5]">
       
-      {/* Menambahkan tag style ini untuk memastikan animasi scroll halus (smooth scroll) 
-        benar-benar berfungsi pada elemen root browser.
-      */}
+      {/* Memastikan scroll-smooth berjalan optimal di seluruh halaman */}
       <style>{`
-        html {
-          scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
       `}</style>
 
-      {/* --- HERO SECTION --- */}
-      {/* h-screen agar tinggi memenuhi layar penuh */}
-      <section className="relative h-screen flex flex-col justify-center items-center bg-[url('/20534381-10.jpg')] bg-no-repeat bg-center bg-cover border-b-[4px] border-black">
-        {/* Overlay agar gambar background masih terlihat tapi tidak mengganggu teks */}
-        <div className="absolute inset-0 bg-white/60 z-[5]"></div>
-        
-        {/* Konten Hero (Logo & Judul) */}
-        {/* -mt-[60px] digunakan agar konten secara visual benar-benar di tengah (mengimbangi menu nav di bawah) */}
-        <div className="relative z-10 w-full px-[20px] flex flex-col items-center justify-center -mt-[60px] md:-mt-[80px]">
-          <img 
-            src="/logo.png" 
-            alt="Logo SMK Pawyatan Daha 2 Kediri" 
-            className="w-[90px] md:w-[130px] mb-[20px] md:mb-[30px] drop-shadow-[3px_3px_0px_#000] hover:scale-105 transition-transform duration-300" 
-          />
-          
-          <div className="text-center w-full">
-            <h1 className="inline-block bg-[#FFDE00] text-black border-[3px] border-black px-[20px] md:px-[30px] py-[10px] md:py-[15px] shadow-[6px_6px_0px_#000] text-3xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-[20px] md:mb-[25px] hover:-translate-y-1 transition-transform duration-300">
-              SMK Pawyatan Daha 2
-            </h1>
-            <p className="bg-white text-black font-bold py-[10px] md:py-[12px] px-[15px] md:px-[25px] border-[3px] border-black shadow-[4px_4px_0px_#000] text-sm md:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed">
-              Teknik Komputer dan Jaringan – Menghubungkan dunia melalui teknologi.
-            </p>
-          </div>
-        </div>
+      {/* --- BACKGROUND DECORATION (Glassmorphism & Neumorphism Base) --- */}
+      {/* Latar belakang gambar dengan efek blur ekstrem untuk kesan kaca */}
+      <div className="fixed inset-0 z-0 bg-[url('/20534381-10.jpg')] bg-cover bg-center opacity-20 filter blur-[8px]"></div>
+      
+      {/* Ornamen warna pastel untuk memperkuat efek Glassmorphism */}
+      <div className="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-300/30 filter blur-[100px] z-0"></div>
+      <div className="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-300/30 filter blur-[100px] z-0"></div>
 
-        {/* --- NAVIGATION DI DALAM HERO --- */}
-        {/* absolute bottom diletakkan di bawah hero agar mirip seperti desain awal */}
-        <nav className="absolute bottom-[40px] md:bottom-[50px] w-full z-20">
-          <ul className="flex justify-center gap-[10px] md:gap-[20px] flex-wrap list-none px-[15px]">
-            <li>
-              <a href="#profil" className="bg-[#38B6FF] border-[2px] md:border-[3px] border-black py-[10px] px-[15px] md:py-[12px] md:px-[30px] text-black font-bold no-underline text-xs md:text-lg shadow-[4px_4px_0px_#000] md:shadow-[6px_6px_0px_#000] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all duration-300 block">
-                PROFIL SEKOLAH
-              </a>
-            </li>
-            <li>
-              <a href="#tkj" className="bg-[#FF90E8] border-[2px] md:border-[3px] border-black py-[10px] px-[15px] md:py-[12px] md:px-[30px] text-black font-bold no-underline text-xs md:text-lg shadow-[4px_4px_0px_#000] md:shadow-[6px_6px_0px_#000] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all duration-300 block">
-                PROFIL JURUSAN
-              </a>
-            </li>
-            <li>
-              <a href="#ukk" className="bg-[#7ED957] border-[2px] md:border-[3px] border-black py-[10px] px-[15px] md:py-[12px] md:px-[30px] text-black font-bold no-underline text-xs md:text-lg shadow-[4px_4px_0px_#000] md:shadow-[6px_6px_0px_#000] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all duration-300 block">
-                TENTANG UKK
-              </a>
-            </li>
-          </ul>
-        </nav>
+      {/* --- HERO SECTION --- */}
+      <section className="relative z-10 min-h-screen flex flex-col justify-center items-center p-[20px]">
+        {/* Glassmorphism Card Wrapper */}
+        <div className="w-full max-w-5xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] rounded-3xl p-[40px] md:p-[60px] flex flex-col items-center text-center">
+          
+          {/* Neumorphic Image Container */}
+          <div className="p-[15px] bg-[#eef2f5] rounded-full shadow-[8px_8px_16px_#caced1,-8px_-8px_16px_#ffffff] mb-[30px]">
+            <img 
+              src="/logo.png" 
+              alt="Logo SMK Pawyatan Daha 2 Kediri" 
+              className="w-[80px] md:w-[120px] object-contain" 
+            />
+          </div>
+          
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-800 tracking-tight mb-[20px]">
+            SMK Pawyatan Daha 2
+          </h1>
+          <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-[40px]">
+            Program Keahlian Teknik Komputer dan Jaringan. Berdedikasi mencetak generasi unggul yang siap menghubungkan dunia melalui inovasi teknologi.
+          </p>
+
+          {/* Navigation with Neumorphism Buttons */}
+          <nav className="w-full">
+            <ul className="flex justify-center gap-[15px] md:gap-[25px] flex-wrap list-none">
+              <li>
+                <a href="#profil" className="block px-[25px] py-[12px] rounded-xl text-slate-700 font-semibold transition-all duration-300 bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#caced1,inset_-6px_-6px_12px_#ffffff] hover:text-blue-600">
+                  Profil Sekolah
+                </a>
+              </li>
+              <li>
+                <a href="#tkj" className="block px-[25px] py-[12px] rounded-xl text-slate-700 font-semibold transition-all duration-300 bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#caced1,inset_-6px_-6px_12px_#ffffff] hover:text-indigo-600">
+                  Profil Jurusan
+                </a>
+              </li>
+              <li>
+                <a href="#ukk" className="block px-[25px] py-[12px] rounded-xl text-slate-700 font-semibold transition-all duration-300 bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#caced1,inset_-6px_-6px_12px_#ffffff] hover:text-green-600">
+                  Tentang UKK
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </section>
 
-      {/* --- CONTENT CONTAINER (FULL WIDTH) --- */}
-      <main className="w-full">
+      {/* --- MAIN CONTENT --- */}
+      <main className="relative z-10 w-full max-w-6xl mx-auto px-[20px] pb-[80px] space-y-[60px] md:space-y-[80px]">
         
         {/* PROFIL SEKOLAH */}
-        <article id="profil" className="w-full px-[5%] lg:px-[10%] py-[60px] md:py-[80px] bg-[#FAFAFA] border-b-[4px] border-black">
-          <div className="mb-[40px]">
-            <h2 className="text-2xl md:text-4xl font-black text-black inline-block bg-[#38B6FF] px-[15px] md:px-[20px] py-[5px] md:py-[10px] border-[3px] border-black shadow-[4px_4px_0px_#000] md:shadow-[6px_6px_0px_#000]">
-              PROFIL SEKOLAH
-            </h2>
-          </div>
+        <article id="profil" className="scroll-mt-[40px]">
+          <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-3xl p-[30px] md:p-[50px]">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-[40px] text-center">Profil Sekolah</h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] lg:gap-[60px]">
-            <div className="space-y-[30px] md:space-y-[40px]">
-              <section>
-                <h3 className="text-lg md:text-2xl font-black bg-[#FFDE00] inline-block px-[10px] md:px-[15px] py-[5px] border-[3px] border-black mb-[15px]">
-                  SEJARAH & LOKASI
-                </h3>
-                <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-                  SMK Pawyatan Daha 2 Kediri merupakan salah satu lembaga pendidikan menengah kejuruan yang berlokasi di <strong>Jl. A. Yani No. 2, Banjaran, Kota Kediri</strong>. 
-                  Didirikan pada <strong>1 Agustus 1965</strong>, sekolah ini telah membangun lingkungan pendidikan yang solid selama lebih dari setengah abad. Kami memiliki pengalaman panjang dalam menyelenggarakan pendidikan kejuruan yang berorientasi pada pengembangan kompetensi dan karakter siswa.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-lg md:text-2xl font-black bg-[#FFDE00] inline-block px-[10px] md:px-[15px] py-[5px] border-[3px] border-black mb-[15px]">
-                  KOMITMEN PENDIDIKAN
-                </h3>
-                <div className="space-y-[15px] text-base md:text-lg text-gray-800 leading-relaxed">
-                  <p>
-                    Sebagai institusi kejuruan, kami berkomitmen untuk menghasilkan lulusan yang tidak hanya memiliki pengetahuan akademik, tetapi juga keterampilan profesional yang mumpuni, sikap kerja yang baik, serta kemampuan beradaptasi dengan dunia industri yang dinamis.
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
+              {/* Sejarah & Komitmen */}
+              <div className="space-y-[30px]">
+                <section className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[inset_5px_5px_10px_#caced1,inset_-5px_-5px_10px_#ffffff]">
+                  <h3 className="text-xl font-semibold text-blue-700 mb-[15px]">Sejarah dan Lokasi</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                    SMK Pawyatan Daha 2 Kediri merupakan institusi pendidikan menengah kejuruan yang telah berdiri sejak <strong>1 Agustus 1965</strong>. Berlokasi strategis di <strong>Jl. A. Yani No. 2, Banjaran, Kota Kediri</strong>, sekolah kami memiliki dedikasi lebih dari setengah abad dalam menghadirkan layanan pendidikan kejuruan yang berorientasi pada peningkatan kompetensi dan pembentukan karakter peserta didik.
                   </p>
-                  <p>
-                    Proses pembelajaran di SMK Pawyatan Daha 2 Kediri dilaksanakan dengan memadukan teori dan praktik secara seimbang. Didukung oleh tenaga pendidik yang kompeten serta fasilitas yang memadai, kami memastikan setiap siswa siap menghadapi tantangan di dunia kerja sesungguhnya.
-                  </p>
-                </div>
-              </section>
-            </div>
+                </section>
 
-            <div className="space-y-[30px] md:space-y-[40px]">
-              <section>
-                <h3 className="text-lg md:text-2xl font-black bg-[#FFDE00] inline-block px-[10px] md:px-[15px] py-[5px] border-[3px] border-black mb-[15px]">
-                  PROGRAM KEAHLIAN
-                </h3>
-                <div className="flex flex-col gap-[15px]">
-                  {[
-                    { title: "Teknik Komputer dan Jaringan (TKJ)", desc: "Fokus pada infrastruktur IT dan administrasi server." },
-                    { title: "Bisnis Daring dan Pemasaran (BDP)", desc: "Keahlian dalam strategi perdagangan digital dan pemasaran." },
-                    { title: "Manajemen Perkantoran & Layanan Bisnis (MPLB)", desc: "Profesionalisme tata kelola administrasi kantor." },
-                    { title: "Agribisnis Pengolahan Hasil Pertanian (APHP)", desc: "Inovasi dalam pengolahan sumber daya alam." },
-                    { title: "Akuntansi dan Keuangan Lembaga (AKL)", desc: "Ketelitian dan akurasi dalam manajemen finansial." }
-                  ].map((item, index) => (
-                    <div key={index} className="bg-white p-[15px] border-[3px] border-black flex flex-col hover:-translate-y-1 transition-transform duration-300">
-                      <strong className="text-black text-base md:text-lg mb-[5px]">{item.title}</strong>
-                      <span className="text-sm md:text-base text-gray-700">{item.desc}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </div>
-
-          <div className="mt-[40px] md:mt-[60px] bg-[#7ED957] p-[25px] md:p-[50px] border-[3px] md:border-[4px] border-black shadow-[6px_6px_0px_#000] md:shadow-[8px_8px_0px_#000]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] md:gap-[40px]">
-              <div>
-                <h3 className="text-black font-black mb-[10px] md:mb-[15px] text-lg md:text-2xl border-b-[3px] md:border-b-[4px] border-black inline-block">VISI SEKOLAH</h3>
-                <p className="italic text-base md:text-xl font-bold leading-relaxed mt-[10px]">
-                  "Menjadi sekolah yang tamatannya unggul dalam prestasi, kompetensi, dan kompetisi serta berbudaya, berakhlaq mulia"
-                </p>
+                <section className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[inset_5px_5px_10px_#caced1,inset_-5px_-5px_10px_#ffffff]">
+                  <h3 className="text-xl font-semibold text-blue-700 mb-[15px]">Komitmen Pendidikan</h3>
+                  <div className="space-y-[10px] text-slate-600 leading-relaxed text-sm md:text-base">
+                    <p>
+                      Sebagai lembaga pendidikan vokasi, kami berfokus pada keseimbangan antara pengetahuan akademik dan keterampilan praktis. Kami bertujuan untuk mencetak lulusan yang profesional, memiliki sikap kerja yang baik, serta adaptif terhadap perkembangan dunia industri.
+                    </p>
+                    <p>
+                      Didukung oleh tenaga pendidik yang kompeten serta fasilitas yang memadai, proses pembelajaran dirancang agar setiap peserta didik memiliki kesiapan penuh untuk bersaing di dunia kerja yang sesungguhnya.
+                    </p>
+                  </div>
+                </section>
               </div>
-              <div>
-                <h3 className="text-black font-black mb-[10px] md:mb-[15px] text-lg md:text-2xl border-b-[3px] md:border-b-[4px] border-black inline-block">MISI SEKOLAH</h3>
-                <ul className="list-decimal list-inside text-base md:text-lg font-bold space-y-[8px] md:space-y-[10px] mt-[10px]">
-                  <li>Meningkatkan mutu pendidikan sesuai perkembangan IPTEK.</li>
-                  <li>Meningkatkan prestasi Akademik dan non-Akademik.</li>
-                  <li>Meningkatkan pendidikan sistem ganda.</li>
-                  <li>Meningkatkan dan mengembangkan pendidikan yang berakhlaq mulia.</li>
-                  <li>Meningkatkan keterserapan tamatan di Dunia Kerja dan Industri.</li>
-                </ul>
+
+              {/* Program Keahlian */}
+              <div className="space-y-[30px]">
+                <section>
+                  <h3 className="text-xl font-semibold text-blue-700 mb-[15px] px-[10px]">Program Keahlian</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mb-[20px] px-[10px]">
+                    Guna memfasilitasi minat dan bakat peserta didik, kami menyelenggarakan beberapa program keahlian unggulan, yaitu:
+                  </p>
+                  <div className="space-y-[15px]">
+                    {[
+                      { title: "Teknik Komputer dan Jaringan (TKJ)", desc: "Mempelajari infrastruktur teknologi informasi dan administrasi server." },
+                      { title: "Bisnis Daring dan Pemasaran (BDP)", desc: "Mendalami keahlian perdagangan digital dan strategi pemasaran modern." },
+                      { title: "Manajemen Perkantoran & Layanan Bisnis", desc: "Membentuk profesionalisme dalam tata kelola administrasi perkantoran." },
+                      { title: "Agribisnis Pengolahan Hasil Pertanian", desc: "Berinovasi dalam pengolahan dan pemanfaatan sumber daya alam." },
+                      { title: "Akuntansi dan Keuangan Lembaga", desc: "Melatih ketelitian dan akurasi dalam pengelolaan manajemen finansial." }
+                    ].map((item, index) => (
+                      <div key={index} className="p-[15px] rounded-xl bg-[#eef2f5] shadow-[5px_5px_10px_#caced1,-5px_-5px_10px_#ffffff] border border-white/50">
+                        <strong className="text-slate-700 block mb-[4px]">{item.title}</strong>
+                        <span className="text-sm text-slate-500">{item.desc}</span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
               </div>
             </div>
+
+            {/* Visi Misi Container */}
+            <div className="mt-[40px] p-[30px] md:p-[40px] rounded-3xl bg-gradient-to-br from-blue-50/50 to-indigo-50/50 shadow-[inset_6px_6px_15px_rgba(0,0,0,0.05),inset_-6px_-6px_15px_rgba(255,255,255,0.8)] border border-white">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+                <div>
+                  <h3 className="text-xl font-bold text-blue-800 mb-[15px]">Visi Sekolah</h3>
+                  <p className="text-slate-700 italic leading-relaxed">
+                    "Menjadi sekolah yang tamatannya unggul dalam prestasi, kompetensi, dan kompetisi serta berbudaya, berakhlaq mulia"
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-blue-800 mb-[15px]">Misi Sekolah</h3>
+                  <ul className="list-decimal list-inside text-slate-700 space-y-[8px] leading-relaxed text-sm md:text-base">
+                    <li>Meningkatkan mutu pendidikan sesuai perkembangan IPTEK.</li>
+                    <li>Meningkatkan prestasi Akademik dan non-Akademik.</li>
+                    <li>Meningkatkan pendidikan sistem ganda.</li>
+                    <li>Meningkatkan dan mengembangkan pendidikan yang berakhlaq mulia.</li>
+                    <li>Meningkatkan keterserapan tamatan di Dunia Kerja dan Industri.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
         </article>
 
         {/* PROFIL JURUSAN TKJ */}
-        <article id="tkj" className="w-full px-[5%] lg:px-[10%] py-[60px] md:py-[80px] bg-white border-b-[4px] border-black">
-          <div className="mb-[40px]">
-            <h2 className="text-2xl md:text-4xl font-black text-black inline-block bg-[#FF90E8] px-[15px] md:px-[20px] py-[5px] md:py-[10px] border-[3px] border-black shadow-[4px_4px_0px_#000] md:shadow-[6px_6px_0px_#000]">
-              PROFIL JURUSAN TKJ
-            </h2>
-          </div>
+        <article id="tkj" className="scroll-mt-[40px]">
+          <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-3xl p-[30px] md:p-[50px]">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-[40px] text-center">Profil Jurusan TKJ</h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] md:gap-[40px] lg:gap-[60px] mb-[40px] md:mb-[50px]">
-            <section>
-              <h3 className="text-lg md:text-2xl font-black bg-[#38B6FF] inline-block px-[10px] md:px-[15px] py-[5px] border-[3px] border-black mb-[15px]">
-                GAMBARAN UMUM JURUSAN
-              </h3>
-              <div className="space-y-[15px] text-base md:text-lg text-gray-800 leading-relaxed">
-                <p>
-                  Teknik Komputer dan Jaringan (TKJ) merupakan program keahlian unggulan di SMK Pawyatan Daha 2 Kediri. Kami berfokus pada pengembangan kompetensi teknologi informasi, mulai dari perakitan perangkat keras, pengelolaan jaringan, hingga sistem komunikasi data. 
-                </p>
-                <p>
-                  Program ini dirancang untuk membentuk tenaga teknis di dunia digital yang memiliki pemahaman luas dan sikap profesional untuk menghadapi perkembangan teknologi yang semakin pesat.
-                </p>
-              </div>
-            </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
+              <section className="space-y-[20px]">
+                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[inset_5px_5px_10px_#caced1,inset_-5px_-5px_10px_#ffffff]">
+                  <h3 className="text-xl font-semibold text-indigo-700 mb-[15px]">Gambaran Umum</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mb-[10px]">
+                    Program Keahlian Teknik Komputer dan Jaringan (TKJ) didesain khusus untuk membekali peserta didik dengan pemahaman mendalam di bidang teknologi informasi. Keahlian yang diajarkan mencakup dasar perakitan perangkat keras, pengelolaan infrastruktur jaringan, hingga sistem komunikasi data terpadu.
+                  </p>
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                    Program ini bertujuan untuk membentuk tenaga teknis menengah yang memiliki sikap profesional dan tanggap terhadap laju perkembangan teknologi digital.
+                  </p>
+                </div>
 
-            <section>
-              <h3 className="text-lg md:text-2xl font-black bg-[#38B6FF] inline-block px-[10px] md:px-[15px] py-[5px] border-[3px] border-black mb-[15px]">
-                SISTEM PEMBELAJARAN
-              </h3>
-              <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-                Siswa akan mendapatkan pengalaman belajar yang mengintegrasikan teori di kelas dan praktik di laboratorium. Melalui pendekatan berbasis kompetensi, siswa akan dilatih memahami infrastruktur IT secara mendalam: dari dasar perangkat keras, jaringan LAN/WAN, hingga pengelolaan keamanan jaringan.
-              </p>
-            </section>
-          </div>
+                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[inset_5px_5px_10px_#caced1,inset_-5px_-5px_10px_#ffffff]">
+                  <h3 className="text-xl font-semibold text-indigo-700 mb-[15px]">Sistem Pembelajaran</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                    Pendekatan pembelajaran kami memadukan kajian teori di ruang kelas dengan penerapan praktik secara intensif di laboratorium. Siswa dilatih untuk melakukan analisis dan pemecahan masalah (problem solving) pada simulasi infrastruktur IT yang nyata.
+                  </p>
+                </div>
+              </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] lg:gap-[60px]">
-            <section>
-              <h3 className="text-lg md:text-2xl font-black bg-[#38B6FF] inline-block px-[10px] md:px-[15px] py-[5px] border-[3px] border-black mb-[15px] md:mb-[20px]">
-                KOMPETENSI UTAMA
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[15px] md:gap-[20px]">
-                {[
-                  { title: "Perangkat Keras (Hardware)", desc: "Perakitan, perbaikan, dan perawatan perangkat komputer." },
-                  { title: "Sistem Operasi", desc: "Instalasi dan konfigurasi berbagai sistem operasi." },
-                  { title: "Jaringan Komputer", desc: "Membangun dan mengelola topologi jaringan (Router & Switch)." },
-                  { title: "Administrasi Server", desc: "Pengelolaan server dan manajemen layanan IT." }
-                ].map((item, index) => (
-                  <div key={index} className="bg-[#FAFAFA] p-[15px] md:p-[20px] border-[3px] border-black hover:-translate-y-1 transition-transform duration-300">
-                    <strong className="text-black text-base md:text-lg block mb-[5px]">{item.title}</strong>
-                    <span className="text-sm md:text-base text-gray-700">{item.desc}</span>
+              <section className="space-y-[30px]">
+                <div>
+                  <h3 className="text-xl font-semibold text-indigo-700 mb-[15px] px-[10px]">Kompetensi Utama</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-[15px]">
+                    {[
+                      { title: "Perangkat Keras", desc: "Perakitan dan perbaikan komputer." },
+                      { title: "Sistem Operasi", desc: "Instalasi beragam sistem operasi." },
+                      { title: "Jaringan Komputer", desc: "Manajemen topologi (Router & Switch)." },
+                      { title: "Administrasi Server", desc: "Pengelolaan layanan berbasis server." }
+                    ].map((item, index) => (
+                      <div key={index} className="p-[15px] rounded-xl bg-[#eef2f5] shadow-[4px_4px_8px_#caced1,-4px_-4px_8px_#ffffff] flex flex-col justify-center text-center">
+                        <strong className="text-slate-700 text-sm md:text-base">{item.title}</strong>
+                        <span className="text-xs text-slate-500 mt-[5px]">{item.desc}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </section>
+                </div>
 
-            <section>
-              <div className="mb-[30px]">
-                <h3 className="text-lg md:text-2xl font-black bg-[#38B6FF] inline-block px-[10px] md:px-[15px] py-[5px] border-[3px] border-black mb-[15px]">
-                  TUJUAN JURUSAN
-                </h3>
-                <ul className="list-disc list-inside text-base md:text-lg text-gray-800 space-y-[8px] md:space-y-[10px] pl-[10px]">
-                  <li>Memiliki kompetensi teknis yang tinggi di bidang komputer dan jaringan.</li>
-                  <li>Mampu merancang, mengimplementasikan, dan memelihara sistem jaringan.</li>
-                  <li>Memiliki kemampuan penyelesaian masalah secara analitis.</li>
-                  <li>Siap bekerja di dunia industri atau melanjutkan pendidikan.</li>
-                </ul>
-              </div>
-
-              <div className="bg-[#FAFAFA] p-[20px] md:p-[30px] border-[3px] md:border-[4px] border-black shadow-[4px_4px_0px_#000] md:shadow-[6px_6px_0px_#000]">
-                <h3 className="text-black font-black mb-[15px] md:mb-[20px] text-lg md:text-2xl border-b-[3px] md:border-b-[4px] border-black inline-block">PELUANG KARIER</h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-[10px] md:gap-[15px] list-none text-sm md:text-base font-bold text-center">
-                  <li className="bg-[#FFDE00] border-[2px] md:border-[3px] border-black py-[8px] md:py-[10px] px-[10px] hover:bg-[#111] hover:text-[#FFDE00] transition-colors duration-300">Network Administrator</li>
-                  <li className="bg-[#FFDE00] border-[2px] md:border-[3px] border-black py-[8px] md:py-[10px] px-[10px] hover:bg-[#111] hover:text-[#FFDE00] transition-colors duration-300">IT Technical Support</li>
-                  <li className="bg-[#FFDE00] border-[2px] md:border-[3px] border-black py-[8px] md:py-[10px] px-[10px] hover:bg-[#111] hover:text-[#FFDE00] transition-colors duration-300">System Administrator</li>
-                  <li className="bg-[#FFDE00] border-[2px] md:border-[3px] border-black py-[8px] md:py-[10px] px-[10px] hover:bg-[#111] hover:text-[#FFDE00] transition-colors duration-300">Network Technician</li>
-                </ul>
-              </div>
-            </section>
+                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[5px_5px_15px_rgba(0,0,0,0.05),-5px_-5px_15px_rgba(255,255,255,0.8)] border border-white/60">
+                  <h3 className="text-xl font-semibold text-indigo-700 mb-[15px]">Tujuan & Peluang Karier</h3>
+                  <ul className="list-disc list-inside text-slate-600 text-sm md:text-base space-y-[6px] mb-[20px]">
+                    <li>Mencetak tenaga ahli di bidang jaringan komputer.</li>
+                    <li>Mampu merancang dan memelihara sistem jaringan.</li>
+                    <li>Mempersiapkan lulusan untuk terjun ke industri atau melanjutkan studi.</li>
+                  </ul>
+                  <div className="flex flex-wrap gap-[10px]">
+                    {["Network Admin", "IT Support", "System Admin", "Teknisi Jaringan"].map((job, idx) => (
+                      <span key={idx} className="text-xs md:text-sm font-medium text-slate-700 px-[12px] py-[6px] bg-white/50 border border-white rounded-full shadow-sm">
+                        {job}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            </div>
           </div>
         </article>
 
         {/* TENTANG UKK */}
-        <article id="ukk" className="w-full px-[5%] lg:px-[10%] py-[60px] md:py-[80px] bg-[#FAFAFA] border-b-[4px] border-black">
-          <div className="mb-[30px] md:mb-[40px]">
-            <h2 className="text-2xl md:text-4xl font-black text-white inline-block bg-[#FF5757] px-[15px] md:px-[20px] py-[5px] md:py-[10px] border-[3px] border-black shadow-[4px_4px_0px_#000] md:shadow-[6px_6px_0px_#000]">
-              TENTANG UKK
-            </h2>
-          </div>
-
-          <div className="mb-[40px] md:mb-[50px] max-w-5xl">
-            <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-              Uji Kompetensi Keahlian (UKK) merupakan salah satu bentuk penilaian yang dilakukan untuk mengukur kemampuan dan keterampilan teknis siswa sesuai dengan kompetensi yang telah dipelajari selama menempuh pendidikan di jurusan Teknik Komputer dan Jaringan. Dalam kegiatan UKK ini, siswa diharapkan mampu menerapkan pengetahuan teori ke dalam praktik secara langsung dengan menggunakan peralatan yang tersedia.
-            </p>
-          </div>
-
-          <h3 className="text-xl md:text-3xl font-black text-black border-b-[3px] md:border-b-[4px] border-black mb-[20px] md:mb-[30px] inline-block">
-            PANDUAN PELAKSANAAN UKK
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[20px] md:gap-[30px]">
+        <article id="ukk" className="scroll-mt-[40px]">
+          <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-3xl p-[30px] md:p-[50px]">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-[20px] text-center">Panduan Pelaksanaan UKK</h2>
             
-            {/* Step 1 */}
-            <div className="bg-white p-[20px] md:p-[25px] border-[3px] border-black hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-              <h4 className="text-black font-black text-base lg:text-xl uppercase mb-[15px] flex items-center gap-[10px]">
-                <span className="bg-[#FF5757] text-white px-[10px] md:px-[12px] py-[2px] border-[2px] md:border-[3px] border-black">1</span> 
-                Crimping Kabel UTP
-              </h4>
-              <ol className="list-decimal list-inside text-sm md:text-base text-gray-800 space-y-[6px] md:space-y-[8px] pl-[5px] flex-grow">
-                <li>Siapkan kabel UTP, konektor RJ45, dan Crimping Tool.</li>
-                <li>Potong ujung kabel menggunakan tang crimping.</li>
-                <li>Kupas kulit luar kabel sekitar 2–3 cm.</li>
-                <li>Pisahkan dan luruskan 8 kabel kecil.</li>
-                <li>Susun sesuai standar Straight: PO, O, PH, B, PB, H, PC, C.</li>
-                <li>Rapikan dan potong sejajar menyisakan 1,5 cm.</li>
-                <li>Masukkan kabel ke RJ45 (klip di bawah).</li>
-                <li>Kunci menggunakan tang crimping.</li>
-                <li>Uji menggunakan LAN Tester.</li>
-              </ol>
-              <div className="mt-[15px] md:mt-[20px] bg-[#FFDE00] p-[10px] md:p-[15px] border-[2px] md:border-[3px] border-black font-bold text-xs md:text-sm">
-                ✅ Catatan: Lampu LAN tester harus menyala berurutan 1-8.
-              </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="bg-white p-[20px] md:p-[25px] border-[3px] border-black hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-              <h4 className="text-black font-black text-base lg:text-xl uppercase mb-[15px] flex items-center gap-[10px]">
-                <span className="bg-[#FF5757] text-white px-[10px] md:px-[12px] py-[2px] border-[2px] md:border-[3px] border-black">2</span> 
-                Instalasi Windows 11
-              </h4>
-              <ol className="list-decimal list-inside text-sm md:text-base text-gray-800 space-y-[6px] md:space-y-[8px] pl-[5px]">
-                <li>Hubungkan flashdisk bootable Windows 11.</li>
-                <li>Restart PC, masuk Boot Menu (F2/F12/Del).</li>
-                <li>Pilih booting via USB / Flashdisk.</li>
-                <li>Pilih Bahasa dan Keyboard, klik Next lalu Install Now.</li>
-                <li>Pilih versi Windows & setujui lisensi.</li>
-                <li>Pilih "Custom: Install Windows only".</li>
-                <li>Hapus partisi lama, pilih Unallocated Space, klik Next.</li>
-                <li>Tunggu proses instalasi hingga restart.</li>
-                <li>Atur Region, Keyboard, dan buat Profil Pengguna.</li>
-                <li>Selesai, instal driver perangkat yang dibutuhkan.</li>
-              </ol>
-            </div>
-
-            {/* Step 3 */}
-            <div className="bg-white p-[20px] md:p-[25px] border-[3px] border-black hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-              <h4 className="text-black font-black text-base lg:text-xl uppercase mb-[15px] flex items-center gap-[10px]">
-                <span className="bg-[#FF5757] text-white px-[10px] md:px-[12px] py-[2px] border-[2px] md:border-[3px] border-black">3</span> 
-                Konfigurasi IP Address
-              </h4>
-              <div className="space-y-[10px] md:space-y-[15px] flex-grow">
-                <p className="text-sm md:text-base text-gray-800 font-bold border-b-[2px] border-black inline-block mb-[5px]">Tahapan:</p>
-                <ol className="list-decimal list-inside text-sm md:text-base text-gray-800 space-y-[6px] md:space-y-[8px] pl-[5px]">
-                  <li>Buka Control Panel {'>'} Network and Sharing Center.</li>
-                  <li>Pilih Change adapter settings, klik kanan Ethernet {'>'} Properties.</li>
-                  <li>Klik ganda Internet Protocol Version 4 (TCP/IPv4).</li>
-                  <li>Pilih "Use the following IP address" (Contoh: 192.168.1.10).</li>
-                  <li>Isi Subnet Mask (255.255.255.0).</li>
-                  <li>Isi DNS Google (8.8.8.8 dan 8.8.4.4).</li>
-                  <li>Klik OK untuk menyimpan.</li>
-                  <li>Buka CMD (Win + R {'>'} ketik cmd).</li>
-                  <li>Ketik <code>ping 8.8.8.8</code> untuk cek koneksi.</li>
-                </ol>
-              </div>
-            </div>
-
-            {/* Step 4 */}
-            <div className="bg-white p-[20px] md:p-[25px] border-[3px] border-black hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-              <h4 className="text-black font-black text-base lg:text-xl uppercase mb-[15px] flex items-center gap-[10px]">
-                <span className="bg-[#FF5757] text-white px-[10px] md:px-[12px] py-[2px] border-[2px] md:border-[3px] border-black">4</span> 
-                File Sharing
-              </h4>
-              <ol className="list-decimal list-inside text-sm md:text-base text-gray-800 space-y-[6px] md:space-y-[8px] pl-[5px]">
-                <li>Buka Control Panel {'>'} Network and Sharing Center.</li>
-                <li>Klik Change advanced sharing settings.</li>
-                <li>Aktifkan Network Discovery & File/Printer Sharing (Private & Public).</li>
-                <li>Di All Networks: Turn off Password protected sharing.</li>
-                <li>Klik kanan folder target {'>'} Properties {'>'} tab Sharing.</li>
-                <li>Pilih Share atau Advanced Sharing.</li>
-                <li>Centang Share this folder, atur Permissions.</li>
-                <li>Di PC Klien: Buka File Explorer {'>'} Network {'>'} Buka PC Server.</li>
-              </ol>
-            </div>
-
-            {/* Step 5 */}
-            <div className="bg-white p-[20px] md:p-[25px] border-[3px] border-black hover:-translate-y-2 transition-transform duration-300 flex flex-col md:col-span-2 xl:col-span-1">
-              <h4 className="text-black font-black text-base lg:text-xl uppercase mb-[15px] flex items-center gap-[10px]">
-                <span className="bg-[#FF5757] text-white px-[10px] md:px-[12px] py-[2px] border-[2px] md:border-[3px] border-black">5</span> 
-                Printer Sharing
-              </h4>
-              <ol className="list-decimal list-inside text-sm md:text-base text-gray-800 space-y-[6px] md:space-y-[8px] pl-[5px]">
-                <li>Buka Control Panel {'>'} Devices and Printers.</li>
-                <li>Klik kanan printer {'>'} Printer Properties {'>'} tab Sharing.</li>
-                <li>Centang Share this printer dan isi Share Name.</li>
-                <li>Pastikan PC server & klien satu jaringan LAN/WiFi.</li>
-                <li>Di PC Klien: Buka Settings {'>'} Bluetooth & Devices {'>'} Printers.</li>
-                <li>Klik Add Device, lalu pilih printer jaringan yang muncul.</li>
-                <li>Selesai. Printer siap digunakan bersama.</li>
-              </ol>
-            </div>
-
-          </div>
-
-          <div className="bg-[#38B6FF] p-[20px] md:p-[40px] border-[3px] md:border-[4px] border-black shadow-[6px_6px_0px_#000] md:shadow-[8px_8px_0px_#000] mt-[40px] md:mt-[60px] flex flex-col items-center max-w-4xl mx-auto hover:scale-[1.02] transition-transform duration-300">
-            <h4 className="text-center text-black font-black text-xl md:text-3xl mb-[10px] md:mb-[15px] uppercase">
-              🏆 Uji Kompetensi Selesai
-            </h4>
-            <p className="text-center text-black font-medium text-sm md:text-xl max-w-2xl leading-relaxed">
-              Keterampilan teknis dan pemahaman Anda telah terverifikasi. Anda telah menyelesaikan seluruh tahapan instruksi dengan baik.
+            <p className="text-slate-600 leading-relaxed text-sm md:text-base text-center max-w-3xl mx-auto mb-[40px]">
+              Uji Kompetensi Keahlian (UKK) merupakan bentuk evaluasi akhir guna mengukur capaian keterampilan teknis siswa secara komprehensif. Melalui ujian ini, peserta didik diharapkan mampu mempraktikkan kompetensi yang telah dipelajari menggunakan standar dan prosedur operasional industri.
             </p>
+
+            {/* Steps Container */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[25px]">
+              
+              {/* Step 1 */}
+              <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
+                <div className="flex items-center gap-[15px] mb-[15px]">
+                  <div className="w-[35px] h-[35px] flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">1</div>
+                  <h3 className="text-lg font-semibold text-slate-800">Perakitan Kabel Jaringan</h3>
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed mb-[10px]">
+                  Peserta didik melakukan persiapan dan pemotongan kabel UTP. Selanjutnya, menyusun urutan warna sesuai standar <em>Straight-through</em> (Putih Orange, Orange, Putih Hijau, Biru, Putih Biru, Hijau, Putih Coklat, Coklat).
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Setelah tersusun rapi, kabel dimasukkan ke dalam konektor RJ45 dan dikunci menggunakan <em>Crimping Tool</em>. Hasil rakitan wajib diuji kelancarannya menggunakan LAN Tester.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
+                <div className="flex items-center gap-[15px] mb-[15px]">
+                  <div className="w-[35px] h-[35px] flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">2</div>
+                  <h3 className="text-lg font-semibold text-slate-800">Instalasi Sistem Operasi</h3>
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed mb-[10px]">
+                  Tahap ini diawali dengan pengaturan prioritas <em>Booting</em> komputer menuju media instalasi (Flashdisk). Peserta didik kemudian menjalankan proses instalasi Windows 11 secara bersih (<em>Clean Install</em>).
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Proses ini mencakup pengelolaan partisi penyimpanan, persetujuan lisensi, hingga penyelesaian konfigurasi awal sistem (bahasa, zona waktu, dan profil pengguna).
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
+                <div className="flex items-center gap-[15px] mb-[15px]">
+                  <div className="w-[35px] h-[35px] flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">3</div>
+                  <h3 className="text-lg font-semibold text-slate-800">Konfigurasi Pengalamatan IP</h3>
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed mb-[10px]">
+                  Peserta didik mengatur identitas jaringan komputer secara manual melalui menu <em>Network and Sharing Center</em>. Konfigurasi yang diatur meliputi penetapan <em>IP Address</em> (misal: 192.168.1.10), pengisian <em>Subnet Mask</em>, serta pengaturan alamat DNS Server.
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Keberhasilan tahapan ini divalidasi dengan melakukan uji konektivitas menggunakan perintah <code>ping</code> melalui antarmuka <em>Command Prompt</em>.
+                </p>
+              </div>
+
+              {/* Step 4 & 5 Combined visually for balance */}
+              <div className="flex flex-col gap-[25px]">
+                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
+                  <div className="flex items-center gap-[15px] mb-[10px]">
+                    <div className="w-[35px] h-[35px] flex shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">4</div>
+                    <h3 className="text-lg font-semibold text-slate-800">Manajemen Berbagi Data (File Sharing)</h3>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed pl-[50px]">
+                    Mengaktifkan fitur <em>Network Discovery</em> dan membagikan folder spesifik kepada pengguna lain dengan memberikan pengaturan hak akses (<em>Permissions</em>) yang sesuai.
+                  </p>
+                </div>
+
+                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
+                  <div className="flex items-center gap-[15px] mb-[10px]">
+                    <div className="w-[35px] h-[35px] flex shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">5</div>
+                    <h3 className="text-lg font-semibold text-slate-800">Berbagi Perangkat Pencetak (Printer)</h3>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed pl-[50px]">
+                    Menginstal dan mengatur fungsi berbagi pada perangkat printer dari komputer <em>Server</em>, untuk kemudian dihubungkan dan digunakan secara nirkabel oleh komputer <em>Client</em>.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Validation Banner */}
+            <div className="mt-[40px] p-[25px] text-center rounded-2xl bg-green-50/60 border border-green-200 shadow-[inset_4px_4px_10px_rgba(0,0,0,0.02)]">
+              <h4 className="text-lg md:text-xl font-bold text-green-700 mb-[5px]">Penyelesaian Evaluasi</h4>
+              <p className="text-sm md:text-base text-green-600/80 font-medium">
+                Siswa yang berhasil menyelesaikan seluruh instruksi teknis di atas dinyatakan kompeten dan memenuhi standar kualifikasi keahlian.
+              </p>
+            </div>
           </div>
         </article>
 
       </main>
 
       {/* --- FOOTER --- */}
-      <footer className="w-full text-center py-[30px] md:py-[40px] px-[20px] bg-white border-t-[4px] md:border-t-[6px] border-black">
-        <p className="font-black text-sm md:text-lg text-black uppercase tracking-wider">
-          © 2026 SMKDAHA2. All Rights Reserved.
+      <footer className="relative z-10 w-full text-center py-[30px] border-t border-white/40 bg-white/20 backdrop-blur-md">
+        <p className="text-sm text-slate-500 font-medium tracking-wide">
+        © 2026 SMKDAHA2. All Rights Reserved.
         </p>
       </footer>
     </div>
