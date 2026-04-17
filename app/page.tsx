@@ -224,10 +224,10 @@ export default function Home() {
                   <h3 className="text-lg font-semibold text-slate-800">Perakitan Kabel Jaringan</h3>
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed mb-[10px]">
-                  Peserta didik melakukan persiapan dan pemotongan kabel UTP. Selanjutnya, menyusun urutan warna sesuai standar <em>Straight-through</em> (Putih Orange, Orange, Putih Hijau, Biru, Putih Biru, Hijau, Putih Coklat, Coklat).
+                  dengan melakukan persiapan dan pemotongan kabel UTP. Selanjutnya, menyusun urutan warna sesuai standar Straight-through (Putih Orange, Orange, Putih Hijau, Biru, Putih Biru, Hijau, Putih Coklat, Coklat).
                 </p>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Setelah tersusun rapi, kabel dimasukkan ke dalam konektor RJ45 dan dikunci menggunakan <em>Crimping Tool</em>. Hasil rakitan wajib diuji kelancarannya menggunakan LAN Tester.
+                  Setelah tersusun rapi, kabel dimasukkan ke dalam konektor RJ45 dan dikunci menggunakan Crimping Tool. Hasil rakitan wajib diuji kelancarannya menggunakan LAN Tester
                 </p>
               </div>
 
@@ -238,7 +238,7 @@ export default function Home() {
                   <h3 className="text-lg font-semibold text-slate-800">Instalasi Sistem Operasi</h3>
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed mb-[10px]">
-                  Tahap ini diawali dengan pengaturan prioritas <em>Booting</em> komputer menuju media instalasi (Flashdisk). Peserta didik kemudian menjalankan proses instalasi Windows 11 secara bersih (<em>Clean Install</em>).
+                  Tahap ini diawali dengan pengaturan prioritas Booting komputer menuju media instalasi (Flashdisk). kemudian menjalankan proses instalasi Windows 11 secara bersih (Clean Install).
                 </p>
                 <p className="text-sm text-slate-600 leading-relaxed">
                   Proses ini mencakup pengelolaan partisi penyimpanan, persetujuan lisensi, hingga penyelesaian konfigurasi awal sistem (bahasa, zona waktu, dan profil pengguna).
@@ -252,10 +252,10 @@ export default function Home() {
                   <h3 className="text-lg font-semibold text-slate-800">Konfigurasi Pengalamatan IP</h3>
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed mb-[10px]">
-                  Peserta didik mengatur identitas jaringan komputer secara manual melalui menu <em>Network and Sharing Center</em>. Konfigurasi yang diatur meliputi penetapan <em>IP Address</em> (misal: 192.168.1.10), pengisian <em>Subnet Mask</em>, serta pengaturan alamat DNS Server.
+                  proses ini mengatur identitas jaringan komputer secara manual melalui menu Network and Sharing Center. Konfigurasi yang diatur meliputi penetapan IP Address (misal: 192.168.1.10), pengisian Subnet Mask, serta pengaturan alamat DNS Server.
                 </p>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Keberhasilan tahapan ini divalidasi dengan melakukan uji konektivitas menggunakan perintah <code>ping</code> melalui antarmuka <em>Command Prompt</em>.
+                  Keberhasilan tahapan ini divalidasi dengan melakukan uji konektivitas menggunakan perintah ping melalui antarmuka Command Prompt.
                 </p>
               </div>
 
@@ -282,14 +282,6 @@ export default function Home() {
                 </div>
               </div>
 
-            </div>
-
-            {/* Validation Banner */}
-            <div className="mt-[40px] p-[25px] text-center rounded-2xl bg-green-50/60 border border-green-200 shadow-[inset_4px_4px_10px_rgba(0,0,0,0.02)]">
-              <h4 className="text-lg md:text-xl font-bold text-green-700 mb-[5px]">Penyelesaian Evaluasi</h4>
-              <p className="text-sm md:text-base text-green-600/80 font-medium">
-                Siswa yang berhasil menyelesaikan seluruh instruksi teknis di atas dinyatakan kompeten dan memenuhi standar kualifikasi keahlian.
-              </p>
             </div>
           </div>
         </article>
