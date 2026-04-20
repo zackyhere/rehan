@@ -43,22 +43,29 @@ export default function HomeTugasFullwidth() {
         </div>
       </header>
 
-      {/* --- HERO SECTION (SELAYAR) --- */}
-      <section className="w-full bg-teal-600 text-white py-20 px-5 flex flex-col items-center text-center">
-        <img 
-          src="/logo.png" 
-          alt="Logo SMK Pawyatan Daha 2" 
-          className="w-24 md:w-32 object-contain mb-6 drop-shadow-xl bg-white/10 p-3 rounded-full" 
-        />
-        <h1 className="text-3xl md:text-5xl font-extrabold mb-4 drop-shadow-md">
-          SMK Pawyatan Daha 2
-        </h1>
-        <h2 className="text-xl md:text-2xl font-medium text-teal-100 mb-6">
-          Program Keahlian Teknik Komputer dan Jaringan
-        </h2>
-        <p className="text-base md:text-lg text-teal-50 max-w-2xl mx-auto leading-relaxed">
-          Halaman ini berisi informasi seputar sekolah, profil program keahlian TKJ, serta panduan singkat mengenai pelaksanaan Ujian Kompetensi Keahlian (UKK).
-        </p>
+      {/* --- HERO SECTION (TINGGI SELAYAR & GAMBAR BELAKANG) --- */}
+      <section className="w-full min-h-screen relative bg-[url('/images.jpg')] bg-cover bg-center bg-no-repeat text-white px-5 flex flex-col items-center justify-center text-center overflow-hidden">
+        
+        {/* Dark Overlay: Lapisan hitam transparan agar teks mudah dibaca */}
+        <div className="absolute inset-0 bg-gray-900/60 z-0"></div>
+
+        {/* Konten Hero: Diberi z-10 agar berada di atas overlay */}
+        <div className="relative z-10 flex flex-col items-center">
+          <img 
+            src="/logo.png" 
+            alt="Logo SMK Pawyatan Daha 2" 
+            className="w-28 md:w-40 object-contain mb-8 drop-shadow-2xl" 
+          />
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-lg">
+            SMK Pawyatan Daha 2
+          </h1>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-teal-100 mb-6 drop-shadow-md">
+            Program Keahlian Teknik Komputer dan Jaringan
+          </h2>
+          <p className="text-base md:text-lg text-teal-50 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            Halaman ini berisi informasi seputar sekolah, profil program keahlian TKJ, serta panduan singkat mengenai pelaksanaan Ujian Kompetensi Keahlian (UKK).
+          </p>
+        </div>
       </section>
 
       {/* --- INFO SEKOLAH (SELAYAR - LATAR PUTIH) --- */}
@@ -132,8 +139,7 @@ export default function HomeTugasFullwidth() {
                 {[
                   { title: "Bongkar Pasang PC", desc: "Merakit komponen komputer dari awal sampai menyala." },
                   { title: "Instalasi OS", desc: "Cara install Windows, Linux, dan aplikasi pendukung." },
-                  { title: "Kabel Jaringan", desc: "Membuat kabel UTP (Straight dan Cross) untuk koneksi." },
-                  { title: "Setting Mikrotik", desc: "Mengatur router agar bisa membagi koneksi internet." }
+                  { title: "Kabel Jaringan", desc: "Membuat kabel UTP (Straight dan Cross) untuk koneksi." }
                 ].map((item, index) => (
                   <li key={index} className="flex gap-4 items-start bg-white p-4 rounded-lg shadow-sm border border-gray-100">
                     <div className="w-6 h-6 mt-0.5 rounded bg-teal-100 text-teal-600 flex items-center justify-center font-bold text-xs shrink-0">✓</div>
