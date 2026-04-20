@@ -3,14 +3,6 @@ import React from 'react';
 export default function Home() {
   return (
     <div className="min-h-screen relative text-gray-800 font-sans selection:bg-teal-200 bg-white">
-      
-      <style>{`
-        html { scroll-behavior: smooth; }
-        /* Menyembunyikan scrollbar untuk menu di HP tapi tetap bisa digeser */
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
-
       {/* --- HEADER & NAVIGATION --- */}
       <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-3">
