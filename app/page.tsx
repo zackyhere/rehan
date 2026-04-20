@@ -1,59 +1,52 @@
 import React from 'react';
 
-export default function Home() {
+export default function HomeTugas() {
   return (
-    <div className="min-h-screen relative text-slate-700 font-sans selection:bg-blue-300 selection:text-white overflow-x-hidden bg-[#eef2f5]">
+    <div className="min-h-screen relative text-gray-800 font-sans selection:bg-teal-200 overflow-x-hidden bg-gray-50">
       
-      {/* Memastikan scroll-smooth berjalan optimal di seluruh halaman */}
       <style>{`
         html { scroll-behavior: smooth; }
       `}</style>
 
-      {/* --- BACKGROUND DECORATION (Glassmorphism & Neumorphism Base) --- */}
-      {/* Latar belakang gambar dengan efek blur ekstrem untuk kesan kaca */}
-      <div className="fixed inset-0 z-0 bg-[url('/20534381-10.jpg')] bg-cover bg-center opacity-20 filter blur-[8px]"></div>
-      
-      {/* Ornamen warna pastel untuk memperkuat efek Glassmorphism */}
-      <div className="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-300/30 filter blur-[100px] z-0"></div>
-      <div className="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-300/30 filter blur-[100px] z-0"></div>
+      {/* --- BACKGROUND SIMPEL --- */}
+      <div className="fixed top-0 left-0 w-full h-64 bg-teal-600 z-0 rounded-b-[40px] md:rounded-b-[80px]"></div>
 
       {/* --- HERO SECTION --- */}
-      <section className="relative z-10 min-h-screen flex flex-col justify-center items-center p-[20px]">
-        {/* Glassmorphism Card Wrapper */}
-        <div className="w-full max-w-5xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] rounded-3xl p-[40px] md:p-[60px] flex flex-col items-center text-center">
+      <section className="relative z-10 min-h-screen flex flex-col pt-20 items-center p-5">
+        <div className="w-full max-w-4xl bg-white shadow-xl rounded-2xl p-8 md:p-12 flex flex-col items-center text-center mt-10 border border-gray-100">
           
-          {/* Neumorphic Image Container */}
-          <div className="p-[15px] bg-[#eef2f5] rounded-full shadow-[8px_8px_16px_#caced1,-8px_-8px_16px_#ffffff] mb-[30px]">
-            <img 
-              src="/logo.png" 
-              alt="Logo SMK Pawyatan Daha 2 Kediri" 
-              className="w-[80px] md:w-[120px] object-contain" 
-            />
-          </div>
+          <img 
+            src="/logo.png" 
+            alt="Logo SMK Pawyatan Daha 2" 
+            className="w-24 md:w-32 object-contain mb-6 drop-shadow-md" 
+          />
           
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-800 tracking-tight mb-[20px]">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4">
             SMK Pawyatan Daha 2
           </h1>
-          <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-[40px]">
-            Program Keahlian Teknik Komputer dan Jaringan. Berdedikasi mencetak generasi unggul yang siap menghubungkan dunia melalui inovasi teknologi.
+          <h2 className="text-xl md:text-2xl font-semibold text-teal-600 mb-6">
+            Teknik Komputer dan Jaringan
+          </h2>
+          <p className="text-base text-gray-600 max-w-xl mx-auto leading-relaxed mb-8">
+            Halaman ini berisi informasi seputar sekolah, profil program keahlian TKJ, serta panduan singkat mengenai pelaksanaan Ujian Kompetensi Keahlian (UKK).
           </p>
 
-          {/* Navigation with Neumorphism Buttons */}
-          <nav className="w-full">
-            <ul className="flex justify-center gap-[15px] md:gap-[25px] flex-wrap list-none">
+          {/* Navigasi Simple Card */}
+          <nav className="w-full mt-4">
+            <ul className="flex justify-center gap-4 flex-wrap list-none">
               <li>
-                <a href="#profil" className="block px-[25px] py-[12px] rounded-xl text-slate-700 font-semibold transition-all duration-300 bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#caced1,inset_-6px_-6px_12px_#ffffff] hover:text-blue-600">
-                  Profil Sekolah
+                <a href="#info-sekolah" className="block px-6 py-3 rounded-lg text-gray-700 bg-gray-100 hover:bg-teal-500 hover:text-white font-medium transition-colors border border-gray-200">
+                  Info Sekolah
                 </a>
               </li>
               <li>
-                <a href="#tkj" className="block px-[25px] py-[12px] rounded-xl text-slate-700 font-semibold transition-all duration-300 bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#caced1,inset_-6px_-6px_12px_#ffffff] hover:text-indigo-600">
-                  Profil Jurusan
+                <a href="#info-jurusan" className="block px-6 py-3 rounded-lg text-gray-700 bg-gray-100 hover:bg-teal-500 hover:text-white font-medium transition-colors border border-gray-200">
+                  Jurusan TKJ
                 </a>
               </li>
               <li>
-                <a href="#ukk" className="block px-[25px] py-[12px] rounded-xl text-slate-700 font-semibold transition-all duration-300 bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#caced1,inset_-6px_-6px_12px_#ffffff] hover:text-green-600">
-                  Tentang UKK
+                <a href="#panduan-ukk" className="block px-6 py-3 rounded-lg text-gray-700 bg-gray-100 hover:bg-teal-500 hover:text-white font-medium transition-colors border border-gray-200">
+                  Tahapan UKK
                 </a>
               </li>
             </ul>
@@ -62,78 +55,49 @@ export default function Home() {
       </section>
 
       {/* --- MAIN CONTENT --- */}
-      <main className="relative z-10 w-full max-w-6xl mx-auto px-[20px] pb-[80px] space-y-[60px] md:space-y-[80px]">
+      <main className="relative z-10 w-full max-w-5xl mx-auto px-5 pb-20 space-y-20">
         
-        {/* PROFIL SEKOLAH */}
-        <article id="profil" className="scroll-mt-[40px]">
-          <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-3xl p-[30px] md:p-[50px]">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-[40px] text-center">Profil Sekolah</h2>
+        {/* INFO SEKOLAH */}
+        <article id="info-sekolah" className="scroll-mt-24">
+          <div className="bg-white shadow-lg border border-gray-100 rounded-2xl p-8 md:p-10">
+            <div className="border-b-[3px] border-teal-500 inline-block mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 pb-2">Informasi Sekolah</h2>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
-              {/* Sejarah & Komitmen */}
-              <div className="space-y-[30px]">
-                <section className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[inset_5px_5px_10px_#caced1,inset_-5px_-5px_10px_#ffffff]">
-                  <h3 className="text-xl font-semibold text-blue-700 mb-[15px]">Sejarah dan Lokasi</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                    SMK Pawyatan Daha 2 Kediri merupakan institusi pendidikan menengah kejuruan yang telah berdiri sejak <strong>1 Agustus 1965</strong>. Berlokasi strategis di <strong>Jl. A. Yani No. 2, Banjaran, Kota Kediri</strong>, sekolah kami memiliki dedikasi lebih dari setengah abad dalam menghadirkan layanan pendidikan kejuruan yang berorientasi pada peningkatan kompetensi dan pembentukan karakter peserta didik.
-                  </p>
-                </section>
-
-                <section className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[inset_5px_5px_10px_#caced1,inset_-5px_-5px_10px_#ffffff]">
-                  <h3 className="text-xl font-semibold text-blue-700 mb-[15px]">Komitmen Pendidikan</h3>
-                  <div className="space-y-[10px] text-slate-600 leading-relaxed text-sm md:text-base">
-                    <p>
-                      Sebagai lembaga pendidikan vokasi, kami berfokus pada keseimbangan antara pengetahuan akademik dan keterampilan praktis. Kami bertujuan untuk mencetak lulusan yang profesional, memiliki sikap kerja yang baik, serta adaptif terhadap perkembangan dunia industri.
-                    </p>
-                    <p>
-                      Didukung oleh tenaga pendidik yang kompeten serta fasilitas yang memadai, proses pembelajaran dirancang agar setiap peserta didik memiliki kesiapan penuh untuk bersaing di dunia kerja yang sesungguhnya.
-                    </p>
-                  </div>
-                </section>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+              <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <h3 className="text-lg font-bold text-teal-700 mb-3">Tentang SMK Pawyatan Daha 2</h3>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                  Sekolah menengah kejuruan ini sudah mulai beroperasi semenjak <strong>1 Agustus 1965</strong>. Lokasi gedungnya sangat mudah dijangkau karena berada di <strong>Jl. A. Yani No. 2, Banjaran, Kota Kediri</strong>. Selama puluhan tahun, sekolah ini terus fokus untuk melatih siswa-siswinya agar siap terjun langsung ke dunia kerja setelah lulus nanti.
+                </p>
               </div>
 
-              {/* Program Keahlian */}
-              <div className="space-y-[30px]">
-                <section>
-                  <h3 className="text-xl font-semibold text-blue-700 mb-[15px] px-[10px]">Program Keahlian</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mb-[20px] px-[10px]">
-                    Guna memfasilitasi minat dan bakat peserta didik, kami menyelenggarakan beberapa program keahlian unggulan, yaitu:
-                  </p>
-                  <div className="space-y-[15px]">
-                    {[
-                      { title: "Teknik Komputer dan Jaringan (TKJ)", desc: "Mempelajari infrastruktur teknologi informasi dan administrasi server." },
-                      { title: "Bisnis Daring dan Pemasaran (BDP)", desc: "Mendalami keahlian perdagangan digital dan strategi pemasaran modern." },
-                      { title: "Manajemen Perkantoran & Layanan Bisnis", desc: "Membentuk profesionalisme dalam tata kelola administrasi perkantoran." },
-                      { title: "Agribisnis Pengolahan Hasil Pertanian", desc: "Berinovasi dalam pengolahan dan pemanfaatan sumber daya alam." },
-                      { title: "Akuntansi dan Keuangan Lembaga", desc: "Melatih ketelitian dan akurasi dalam pengelolaan manajemen finansial." }
-                    ].map((item, index) => (
-                      <div key={index} className="p-[15px] rounded-xl bg-[#eef2f5] shadow-[5px_5px_10px_#caced1,-5px_-5px_10px_#ffffff] border border-white/50">
-                        <strong className="text-slate-700 block mb-[4px]">{item.title}</strong>
-                        <span className="text-sm text-slate-500">{item.desc}</span>
-                      </div>
-                    ))}
-                  </div>
-                </section>
+              <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <h3 className="text-lg font-bold text-teal-700 mb-3">Sistem Pendidikan</h3>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                  Pembelajaran di sini tidak hanya soal teori di kelas, tapi lebih banyak praktik langsung di laboratorium. Tujuannya supaya para siswa terbiasa dengan alat dan mesin yang nantinya benar-benar akan mereka gunakan saat bekerja di perusahaan atau industri.
+                </p>
               </div>
             </div>
 
-            {/* Visi Misi Container */}
-            <div className="mt-[40px] p-[30px] md:p-[40px] rounded-3xl bg-gradient-to-br from-blue-50/50 to-indigo-50/50 shadow-[inset_6px_6px_15px_rgba(0,0,0,0.05),inset_-6px_-6px_15px_rgba(255,255,255,0.8)] border border-white">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+            {/* Visi Misi */}
+            <div className="bg-teal-50 p-6 md:p-8 rounded-xl border border-teal-100">
+              <h3 className="text-xl font-bold text-teal-800 mb-4 text-center">Visi & Misi</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-xl font-bold text-blue-800 mb-[15px]">Visi Sekolah</h3>
-                  <p className="text-slate-700 italic leading-relaxed">
+                  <p className="text-gray-700 font-medium italic mb-2">Visi Utama:</p>
+                  <p className="text-gray-600 bg-white p-4 rounded-lg shadow-sm border border-teal-50 text-sm md:text-base">
                     "Menjadi sekolah yang tamatannya unggul dalam prestasi, kompetensi, dan kompetisi serta berbudaya, berakhlaq mulia"
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-blue-800 mb-[15px]">Misi Sekolah</h3>
-                  <ul className="list-decimal list-inside text-slate-700 space-y-[8px] leading-relaxed text-sm md:text-base">
-                    <li>Meningkatkan mutu pendidikan sesuai perkembangan IPTEK.</li>
-                    <li>Meningkatkan prestasi Akademik dan non-Akademik.</li>
-                    <li>Meningkatkan pendidikan sistem ganda.</li>
-                    <li>Meningkatkan dan mengembangkan pendidikan yang berakhlaq mulia.</li>
-                    <li>Meningkatkan keterserapan tamatan di Dunia Kerja dan Industri.</li>
+                  <p className="text-gray-700 font-medium mb-2">Langkah Misi:</p>
+                  <ul className="list-disc list-outside ml-4 text-gray-600 space-y-1 text-sm md:text-base marker:text-teal-500">
+                    <li>Mengikuti perkembangan teknologi terkini dalam proses belajar.</li>
+                    <li>Mendorong siswa meraih juara di bidang akademik maupun lomba luar kelas.</li>
+                    <li>Memperkuat program magang atau PKL (Pendidikan Sistem Ganda).</li>
+                    <li>Mendidik karakter dan moral siswa agar berakhlak baik.</li>
+                    <li>Memastikan lulusan gampang mencari kerja di dunia industri.</li>
                   </ul>
                 </div>
               </div>
@@ -143,141 +107,118 @@ export default function Home() {
         </article>
 
         {/* PROFIL JURUSAN TKJ */}
-        <article id="tkj" className="scroll-mt-[40px]">
-          <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-3xl p-[30px] md:p-[50px]">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-[40px] text-center">Profil Jurusan TKJ</h2>
+        <article id="info-jurusan" className="scroll-mt-24">
+          <div className="bg-white shadow-lg border border-gray-100 rounded-2xl p-8 md:p-10">
+            <div className="border-b-[3px] border-teal-500 inline-block mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 pb-2">Jurusan TKJ</h2>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
-              <section className="space-y-[20px]">
-                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[inset_5px_5px_10px_#caced1,inset_-5px_-5px_10px_#ffffff]">
-                  <h3 className="text-xl font-semibold text-indigo-700 mb-[15px]">Gambaran Umum</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mb-[10px]">
-                    Program Keahlian Teknik Komputer dan Jaringan (TKJ) didesain khusus untuk membekali peserta didik dengan pemahaman mendalam di bidang teknologi informasi. Keahlian yang diajarkan mencakup dasar perakitan perangkat keras, pengelolaan infrastruktur jaringan, hingga sistem komunikasi data terpadu.
-                  </p>
-                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                    Program ini bertujuan untuk membentuk tenaga teknis menengah yang memiliki sikap profesional dan tanggap terhadap laju perkembangan teknologi digital.
-                  </p>
-                </div>
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="flex-1 space-y-6">
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                  <strong>Teknik Komputer dan Jaringan (TKJ)</strong> adalah jurusan yang sangat cocok buat kamu yang suka utak-atik komputer dan internet. Di sini, siswa akan diajarkan segala hal dari nol, mulai dari merakit PC, menginstal Windows, sampai menyambungkan banyak komputer menjadi satu jaringan lokal maupun internet.
+                </p>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                  Lulusan TKJ biasanya punya peluang kerja yang lumayan luas. Beberapa profesi yang bisa diambil setelah lulus antara lain menjadi Teknisi Komputer, Admin Jaringan, Staff IT Support di kantor, atau bahkan membuka jasa *service* laptop dan komputer sendiri.
+                </p>
+              </div>
 
-                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[inset_5px_5px_10px_#caced1,inset_-5px_-5px_10px_#ffffff]">
-                  <h3 className="text-xl font-semibold text-indigo-700 mb-[15px]">Sistem Pembelajaran</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                    Pendekatan pembelajaran kami memadukan kajian teori di ruang kelas dengan penerapan praktik secara intensif di laboratorium. Siswa dilatih untuk melakukan analisis dan pemecahan masalah (problem solving) pada simulasi infrastruktur IT yang nyata.
-                  </p>
-                </div>
-              </section>
-
-              <section className="space-y-[30px]">
-                <div>
-                  <h3 className="text-xl font-semibold text-indigo-700 mb-[15px] px-[10px]">Kompetensi Utama</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-[15px]">
-                    {[
-                      { title: "Perangkat Keras", desc: "Perakitan dan perbaikan komputer." },
-                      { title: "Sistem Operasi", desc: "Instalasi beragam sistem operasi." },
-                      { title: "Jaringan Komputer", desc: "Manajemen topologi (Router & Switch)." },
-                      { title: "Administrasi Server", desc: "Pengelolaan layanan berbasis server." }
-                    ].map((item, index) => (
-                      <div key={index} className="p-[15px] rounded-xl bg-[#eef2f5] shadow-[4px_4px_8px_#caced1,-4px_-4px_8px_#ffffff] flex flex-col justify-center text-center">
-                        <strong className="text-slate-700 text-sm md:text-base">{item.title}</strong>
-                        <span className="text-xs text-slate-500 mt-[5px]">{item.desc}</span>
+              <div className="flex-1 bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <h3 className="text-lg font-bold text-teal-700 mb-4">Materi yang Dipelajari</h3>
+                <ul className="space-y-3">
+                  {[
+                    { title: "Bongkar Pasang PC", desc: "Merakit komponen komputer dari awal sampai menyala." },
+                    { title: "Instalasi OS", desc: "Cara install Windows, Linux, dan aplikasi pendukung." },
+                    { title: "Kabel Jaringan", desc: "Membuat kabel UTP (Straight dan Cross) untuk koneksi." },
+                    { title: "Setting Mikrotik", desc: "Mengatur router agar bisa membagi koneksi internet." }
+                  ].map((item, index) => (
+                    <li key={index} className="flex gap-3 items-start">
+                      <div className="w-6 h-6 mt-0.5 rounded bg-teal-100 text-teal-600 flex items-center justify-center font-bold text-xs shrink-0">✓</div>
+                      <div>
+                        <strong className="text-gray-700 text-sm md:text-base block">{item.title}</strong>
+                        <span className="text-sm text-gray-500">{item.desc}</span>
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[5px_5px_15px_rgba(0,0,0,0.05),-5px_-5px_15px_rgba(255,255,255,0.8)] border border-white/60">
-                  <h3 className="text-xl font-semibold text-indigo-700 mb-[15px]">Tujuan & Peluang Karier</h3>
-                  <ul className="list-disc list-inside text-slate-600 text-sm md:text-base space-y-[6px] mb-[20px]">
-                    <li>Mencetak tenaga ahli di bidang jaringan komputer.</li>
-                    <li>Mampu merancang dan memelihara sistem jaringan.</li>
-                    <li>Mempersiapkan lulusan untuk terjun ke industri atau melanjutkan studi.</li>
-                  </ul>
-                  <div className="flex flex-wrap gap-[10px]">
-                    {["Network Admin", "IT Support", "System Admin", "Teknisi Jaringan"].map((job, idx) => (
-                      <span key={idx} className="text-xs md:text-sm font-medium text-slate-700 px-[12px] py-[6px] bg-white/50 border border-white rounded-full shadow-sm">
-                        {job}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </section>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </article>
 
-        {/* TENTANG UKK */}
-        <article id="ukk" className="scroll-mt-[40px]">
-          <div className="bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-3xl p-[30px] md:p-[50px]">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-[20px] text-center">UKK Praktikum TKJ</h2>
-            
-            <p className="text-slate-600 leading-relaxed text-sm md:text-base text-center max-w-3xl mx-auto mb-[40px]">
-              Uji Kompetensi Keahlian (UKK) merupakan bentuk evaluasi akhir guna mengukur capaian keterampilan teknis siswa secara komprehensif. Melalui ujian ini, peserta didik diharapkan mampu mempraktikkan kompetensi yang telah dipelajari menggunakan standar dan prosedur operasional industri.
-            </p>
+        {/* PANDUAN UKK */}
+        <article id="panduan-ukk" className="scroll-mt-24">
+          <div className="bg-white shadow-lg border border-gray-100 rounded-2xl p-8 md:p-10">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Langkah-Langkah UKK TKJ</h2>
+              <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
+                Saat Ujian Praktik (UKK) nanti, siswa diwajibkan untuk menyelesaikan sebuah *project* jaringan dasar. Berikut adalah urutan tugas yang biasanya harus diselesaikan dari awal sampai akhir ujian.
+              </p>
+            </div>
 
-            {/* Steps Container */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[25px]">
+            <div className="space-y-6">
               
               {/* Step 1 */}
-              <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
-                <div className="flex items-center gap-[15px] mb-[15px]">
-                  <div className="w-[35px] h-[35px] flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">1</div>
-                  <h3 className="text-lg font-semibold text-slate-800">Perakitan Kabel Jaringan</h3>
+              <div className="flex flex-col md:flex-row gap-4 p-5 rounded-xl border border-gray-200 hover:border-teal-400 transition-colors group">
+                <div className="w-12 h-12 rounded-full bg-teal-100 text-teal-600 text-xl font-bold flex items-center justify-center shrink-0 group-hover:bg-teal-500 group-hover:text-white transition-colors">1</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">Membuat Kabel Jaringan</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-2">
+                    Tahap awal adalah menyiapkan kabel jaringan UTP. Kita memotong pelindung luarnya dan menyusun urutan kabel kecil di dalamnya menggunakan aturan tipe <strong>Straight</strong> (Putih Orange, Orange, Putih Hijau, Biru, Putih Biru, Hijau, Putih Coklat, Coklat).
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Kalau susunannya sudah rata dan pas, ujung kabel dimasukkan ke konektor RJ-45 lalu ditekan kuat pakai tang <em>crimping</em>. Terakhir, dites pakai LAN tester untuk memastikan semua lampu (nomor 1 sampai 8) menyala dengan normal.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-600 leading-relaxed mb-[10px]">
-                  dengan melakukan persiapan dan pemotongan kabel UTP. Selanjutnya, menyusun urutan warna sesuai standar Straight-through (Putih Orange, Orange, Putih Hijau, Biru, Putih Biru, Hijau, Putih Coklat, Coklat).
-                </p>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Setelah tersusun rapi, kabel dimasukkan ke dalam konektor RJ45 dan dikunci menggunakan Crimping Tool. Hasil rakitan wajib diuji kelancarannya menggunakan LAN Tester
-                </p>
               </div>
 
               {/* Step 2 */}
-              <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
-                <div className="flex items-center gap-[15px] mb-[15px]">
-                  <div className="w-[35px] h-[35px] flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">2</div>
-                  <h3 className="text-lg font-semibold text-slate-800">Instalasi Sistem Operasi</h3>
+              <div className="flex flex-col md:flex-row gap-4 p-5 rounded-xl border border-gray-200 hover:border-teal-400 transition-colors group">
+                <div className="w-12 h-12 rounded-full bg-teal-100 text-teal-600 text-xl font-bold flex items-center justify-center shrink-0 group-hover:bg-teal-500 group-hover:text-white transition-colors">2</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">Instalasi Windows</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-2">
+                    Langkah kedua adalah menginstal ulang komputer. Caranya, atur pengaturan BIOS agar <em>booting</em> pertama kali membaca Flashdisk yang sudah berisi <em>installer</em> sistem operasi (misalnya Windows 11).
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Pilih opsi <em>Clean Install</em> agar Windows bersih dari data lama. Di bagian ini, kita juga akan membagi partisi penyimpanan (Local Disk C dan D) dan melakukan pembuatan nama komputer serta *password* *user*.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-600 leading-relaxed mb-[10px]">
-                  Tahap ini diawali dengan pengaturan prioritas Booting komputer menuju media instalasi (Flashdisk). kemudian menjalankan proses instalasi Windows 11 secara bersih (Clean Install).
-                </p>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Proses ini mencakup pengelolaan partisi penyimpanan, persetujuan lisensi, hingga penyelesaian konfigurasi awal sistem (bahasa, zona waktu, dan profil pengguna).
-                </p>
               </div>
 
               {/* Step 3 */}
-              <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
-                <div className="flex items-center gap-[15px] mb-[15px]">
-                  <div className="w-[35px] h-[35px] flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">3</div>
-                  <h3 className="text-lg font-semibold text-slate-800">Konfigurasi Pengalamatan IP</h3>
+              <div className="flex flex-col md:flex-row gap-4 p-5 rounded-xl border border-gray-200 hover:border-teal-400 transition-colors group">
+                <div className="w-12 h-12 rounded-full bg-teal-100 text-teal-600 text-xl font-bold flex items-center justify-center shrink-0 group-hover:bg-teal-500 group-hover:text-white transition-colors">3</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">Setting IP Address</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-2">
+                    Setelah Windows siap, kita harus memberi "alamat" pada komputer tersebut. Buka menu pengaturan <em>Network and Sharing Center</em>, lalu masukkan alamat IP secara manual (Static IP), misalnya <code>192.168.1.10</code> beserta <em>Subnet Mask</em>-nya.
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Untuk mengecek apakah komputer kita sudah berhasil terhubung dengan komputer teman (client/server), kita buka program CMD (Command Prompt) lalu ketikkan perintah <code>ping</code> ke IP tujuan.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-600 leading-relaxed mb-[10px]">
-                  proses ini mengatur identitas jaringan komputer secara manual melalui menu Network and Sharing Center. Konfigurasi yang diatur meliputi penetapan IP Address (misal: 192.168.1.10), pengisian Subnet Mask, serta pengaturan alamat DNS Server.
-                </p>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Keberhasilan tahapan ini divalidasi dengan melakukan uji konektivitas menggunakan perintah ping melalui antarmuka Command Prompt.
-                </p>
               </div>
 
-              {/* Step 4 & 5 Combined visually for balance */}
-              <div className="flex flex-col gap-[25px]">
-                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
-                  <div className="flex items-center gap-[15px] mb-[10px]">
-                    <div className="w-[35px] h-[35px] flex shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">4</div>
-                    <h3 className="text-lg font-semibold text-slate-800">Manajemen Berbagi Data (File Sharing)</h3>
+              {/* Step 4 & 5 side by side on desktop */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex flex-col gap-3 p-5 rounded-xl border border-gray-200 hover:border-teal-400 transition-colors group">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-teal-100 text-teal-600 text-lg font-bold flex items-center justify-center shrink-0 group-hover:bg-teal-500 group-hover:text-white transition-colors">4</div>
+                    <h3 className="text-lg font-bold text-gray-800">Sharing Folder</h3>
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed pl-[50px]">
-                    Mengaktifkan fitur <em>Network Discovery</em> dan membagikan folder spesifik kepada pengguna lain dengan memberikan pengaturan hak akses (<em>Permissions</em>) yang sesuai.
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Fitur <em>Network Discovery</em> harus diaktifkan dulu. Setelah itu, buat sebuah folder, klik kanan, lalu pilih menu <em>Properties</em> dan <em>Sharing</em>. Di sini kita mengatur siapa saja yang boleh mengakses dan apakah orang lain boleh mengedit file di dalamnya (<em>Read/Write permissions</em>).
                   </p>
                 </div>
 
-                <div className="p-[25px] rounded-2xl bg-[#eef2f5] shadow-[6px_6px_12px_#caced1,-6px_-6px_12px_#ffffff] border border-white/50 hover:shadow-[inset_4px_4px_8px_#caced1,inset_-4px_-4px_8px_#ffffff] transition-all duration-300">
-                  <div className="flex items-center gap-[15px] mb-[10px]">
-                    <div className="w-[35px] h-[35px] flex shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.1)]">5</div>
-                    <h3 className="text-lg font-semibold text-slate-800">Berbagi Perangkat Pencetak (Printer)</h3>
+                <div className="flex flex-col gap-3 p-5 rounded-xl border border-gray-200 hover:border-teal-400 transition-colors group">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-teal-100 text-teal-600 text-lg font-bold flex items-center justify-center shrink-0 group-hover:bg-teal-500 group-hover:text-white transition-colors">5</div>
+                    <h3 className="text-lg font-bold text-gray-800">Sharing Printer</h3>
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed pl-[50px]">
-                    Menginstal dan mengatur fungsi berbagi pada perangkat printer dari komputer <em>Server</em>, untuk kemudian dihubungkan dan digunakan secara nirkabel oleh komputer <em>Client</em>.
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Langkah terakhir adalah membagikan akses mesin <em>printer</em>. Masuk ke pengaturan <em>Devices and Printers</em> pada komputer yang colok kabel printer langsung (Server). Aktifkan opsi <em>Share this printer</em> supaya komputer lain di jaringan tersebut bisa ikut menge-<em>print</em> tugas tanpa harus pindah-pindah kabel USB.
                   </p>
                 </div>
               </div>
@@ -289,9 +230,9 @@ export default function Home() {
       </main>
 
       {/* --- FOOTER --- */}
-      <footer className="relative z-10 w-full text-center py-[30px] border-t border-white/40 bg-white/20 backdrop-blur-md">
-        <p className="text-sm text-slate-500 font-medium tracking-wide">
-        © 2026 SMKDAHA2. All Rights Reserved.
+      <footer className="w-full text-center py-6 bg-white border-t border-gray-200 mt-10">
+        <p className="text-sm text-gray-500">
+          Tugas Website UKK - Dibuat untuk SMK Pawyatan Daha 2
         </p>
       </footer>
     </div>
